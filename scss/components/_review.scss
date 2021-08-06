@@ -1,0 +1,141 @@
+@use '../base' as *;
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInFromBottom 2s 0.75s;
+  animation-fill-mode: backwards;
+
+  @include mq (medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &:last-of-type {
+    animation-delay: .85s;
+    animation-fill-mode: backwards;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    transition: 1s;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  &__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    transition: 1s;
+  }
+
+  &__user-box {
+    margin-right: auto;
+    margin-left: 1.5rem;
+    transition: 1s;
+  }
+
+  &__user-name {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  &__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__rating {
+    color: var(--color-primary-red);
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: -3.25rem;
+    left: -1.75rem;
+    color: var(--color-grey-light-2);
+    font-size: 25rem;
+    line-height: 1;
+    font-family: "Nunito Sans", sans-serif;
+    transition: 1s;
+  }
+
+  &:hover &__user-box {
+    transform: translateX(30%);
+
+    @include mq (large) {
+      transform: none;
+    }
+  }
+
+  &:hover &__text {
+    transform: translateX(5%);
+    
+    @include mq (small) {
+      transform: none;
+    }
+  }
+
+  &:hover::before {
+    left: -3.25rem;
+  }
+
+  &:hover &__photo {
+    transform: scale(1.2);
+  }
+
+  &:hover &__rating {
+    animation: shake-scale 1s infinite;
+  }
+}
+
+@keyframes shake-scale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    transform: scale(1.05) rotate(-3deg);
+  }
+  20% {
+    transform: scale(1.08) rotate(3deg);
+  }
+  30% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-3deg);
+  }
+  60% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  70% {
+    transform: scale(1.2) rotate(-3deg);
+  }
+  80% {
+    transform: scale(1.2) rotate(3deg);
+  }
+  90% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(-3deg);
+  }
+}

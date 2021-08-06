@@ -1,0 +1,141 @@
+@use '../abstracts' as *;
+.btn-inline {
+  border: none;
+  background: transparent;
+  color: var(--color-primary-red);
+  //to make it resuable
+  font-size: inherit;
+  border-bottom: 0.1rem solid currentColor;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+
+    & > span {
+      margin-left: 0.8rem;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s linear infinite;
+  }
+
+  span {
+    margin-left: 0.3rem;
+    transition: margin-left 0.2s;
+    display: inline-block;
+  }
+
+  &--animated {
+    animation: fadeInFromBottomExtend 1s 1.5s;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: 0.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+@keyframes fadeInFromBottomExtend {
+  0% {transform: translateY(200%);
+  opacity: 0;}
+
+  80% {transform: translateY(-5%);
+    opacity: 1;}
+
+  100% {transform: translateY(0);
+    opacity: 1;}
+}
+
+/////////////////////////general btn///////////////////////////
+
+.btn {
+  border: none;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-primary-red-light),
+    var(--color-primary-red-dark)
+  );
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 10rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  //  padding: 2rem 5rem;
+
+  //  &__visible {
+  //    display: inline-block;
+  //    position: absolute;
+  //    left: 50%;
+  //    transform: translateX(-50%);
+  //    transition: 1s;
+  //  }
+
+  //  &__hidden {
+  //    display: inline-block;
+  //    transform: translateY(-5rem);
+  //    opacity: 0;
+  //    transition: 1s;
+  //  }
+
+  &__visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    transition: 1s;
+  }
+
+  &__hidden {
+    display: inline-block;
+    padding: 2rem 0;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    opacity: 0;
+  }
+
+  &:hover &__hidden {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      to top left,
+      var(--color-primary-red-light),
+      var(--color-primary-red-dark)
+    );
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1.5s linear infinite;
+  }
+}

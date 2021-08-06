@@ -1,0 +1,17 @@
+@use '../components/btn';
+@use '../base' as *;
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  @include mq (medium) {
+    padding: 2.5rem 0;
+  }
+
+  &__book-now {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}

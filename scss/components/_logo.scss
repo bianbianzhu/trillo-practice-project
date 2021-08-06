@@ -1,0 +1,8 @@
+@use '../abstracts';
+
+.logo-box {
+    // background-color: green;
+    &__logo-image {
+        height: 3.25rem;
+    }
+}

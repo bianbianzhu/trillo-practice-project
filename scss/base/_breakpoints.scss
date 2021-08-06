@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+$breakpoints: (
+   largest: 75em, //1200px because we didn't change the html font-size to 10px but instead we use 62.5%, so the user agent default font-size is still 16px
+   //we need to use em here, which by unit, is 16px
+   large: 68.75em, //1100px
+   medium: 56.25em, //900px
+   small: 37.5em, //600px
+   smallest: 31.25em, //500px
+);
+
+@mixin mq($key) {
+    $size: map-get($map: $breakpoints, $key: $key);
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}

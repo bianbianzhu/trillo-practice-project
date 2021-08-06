@@ -1,0 +1,91 @@
+@use '../base' as *;
+@use '../components/side-nav';
+@use '../components/legal-content';
+
+@use '../components/gallery';
+@use '../components/overview';
+@use '../components/description';
+@use '../components/list';
+@use '../components/recommend';
+
+@use '../components/review';
+
+@use '../components/cta';
+
+.content-wrapper {
+  display: flex;
+  @include mq (medium) {
+    flex-direction: column;
+  }
+  
+}
+
+.side-bar {
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-view {
+  background-color: #fff;
+  flex: 1 1 auto;
+  min-height: 80rem;
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--border-bottom-grey);
+  font-size: 1.4rem;
+  
+  @include mq (medium) {
+    padding: 3rem;
+  }
+  
+  @include mq (small) {
+    flex-direction: column;
+  }
+
+}
+
+.description {
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  animation: fadeInFromBottom 2s .5s;
+  animation-fill-mode: backwards;
+
+  @include mq (medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @include mq (small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.user-reviews {
+  flex: 1;
+  color: var(--color-grey-dark-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes fadeInFromBottom {
+  0% {transform: translateY(30%);
+  opacity: 0;}
+
+  80% {transform: translateY(-5%);
+    opacity: 1;}
+
+  100% {transform: translateY(0);
+    opacity: 1;}
+}

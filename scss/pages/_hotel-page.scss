@@ -1,0 +1,28 @@
+@use '../layout/header';
+@use '../layout/content-wrapper';
+@use '../base' as *;
+// @use '../abstracts';
+
+.main-wrapper {
+  max-width: 120rem;
+  min-height: 50rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+
+  @include mq (largest) {
+    margin: 0;
+    max-width: 100%;//important!!!!! dont use width as you set max-width to 120rem, needs to update
+  }
+}
+
+.header {
+  height: 7rem;
+  background-color: #fff;
+  //    border-bottom: var(--color-grey-light-2);
+
+  @include mq (smallest) {
+    height: 11rem;
+  }
+}
+

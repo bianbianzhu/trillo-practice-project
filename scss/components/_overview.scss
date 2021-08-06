@@ -1,0 +1,93 @@
+@use '../components/btn';
+@use '../base' as *;
+
+.overview {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    border-bottom: .1rem var(--color-grey-light-2) solid;
+    box-shadow: 0 .5rem .5rem rgba($color: #000000, $alpha: .15);
+    position: relative;
+    z-index: 1;
+
+    &__heading {
+      font-size: 2.25rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      padding: 1.5rem 3rem;
+
+      @include mq (small) {
+         font-size: 1.8rem;
+         padding: 1.25rem 2rem;
+       }
+
+       @include mq (smallest) {
+         font-size: 1.6rem;
+         padding: 1rem 1.5rem;
+       }
+    }
+
+    &__stars {
+    //    flex: 1;
+       margin-right: auto;
+       display: flex;
+    //    align-items: center;
+    }
+
+    &__icon {
+      height: 1.75rem;
+      width: 1.75rem;
+      fill: var(--color-primary-red);
+
+      &--location {
+          margin-right: .5rem;
+      }
+    }
+
+    &__location {
+       display: flex;
+       align-items: center;
+       font-size: 1.2rem;
+    }
+
+    &__rating {
+       background: var(--color-primary-red);
+       align-self: stretch;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       color: #fff;
+       margin-left: 3rem;
+       padding: 0 2.25rem;
+
+       @include mq (small) {
+         padding: 0 1.5rem;
+       }
+
+       @include mq (smallest) {
+         margin-left: .5rem;
+       }
+    }
+
+    &__rating-average {
+       font-size: 2.5rem;
+       font-weight: 400;
+       margin: -.3rem;
+
+       @include mq (small) {
+         font-size: 1.8rem;
+       }
+    }
+
+    &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include mq (small) {
+         transform: scale(.7);
+       }
+    }
+}

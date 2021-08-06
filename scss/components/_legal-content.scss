@@ -1,0 +1,13 @@
+@use '../abstracts';
+@use '../base' as *;
+
+.legal-content {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--color-grey-light-4);
+
+  @include mq(medium) {
+    display: none;
+  }
+}
