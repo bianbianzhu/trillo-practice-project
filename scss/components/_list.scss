@@ -25,14 +25,19 @@
           height: 1rem;
           margin-right: .7rem;
           transition: .25s;
-        //   background-image: url(../../img/chevron-thin-right.svg);
-        //   background-size: cover;
-        //   background-repeat: no-repeat;
+          background-image: url(../../img/chevron-thin-right.svg);
+          background-size: cover;
+          background-repeat: no-repeat;
+
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
           background-color: var(--color-primary-red);
           -webkit-mask-image: url(../../img/chevron-thin-right.svg);
           -webkit-mask-size: cover;
           mask-image: url(../../img/chevron-thin-right.svg);
           mask-size: cover;
+          background-image: none;
+        }
+          
       }
 
       &:hover::before {
