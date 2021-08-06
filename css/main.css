@@ -10,9 +10,9 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0,0,0, .3);
-  --shadow-light: 0 2rem 5rem rgba(0,0,0, .06);
-  --border-bottom-grey: .1rem var(--color-grey-light-2) solid;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --border-bottom-grey: 0.1rem var(--color-grey-light-2) solid;
 }
 
 *,
@@ -494,7 +494,6 @@ body {
   -webkit-mask-size: cover;
   mask-image: url(../../img/chevron-thin-right.svg);
   mask-size: cover;
-  background-image: none;
 }
 .list__item:hover::before {
   margin-right: 0.9rem;
