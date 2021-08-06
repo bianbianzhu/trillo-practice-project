@@ -1,54 +1,52 @@
 .list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--border-bottom-grey);
+  border-bottom: var(--border-bottom-grey);
+
+  // & > * {
+  //     width: 50%;
+  // }
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
     display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    margin: 3rem 0;
-    padding: 3rem 0 ;
-    border-top: var(--border-bottom-grey);
-    border-bottom: var(--border-bottom-grey);
-    
+    align-items: center;
 
-    // & > * {
-    //     width: 50%;
-    // }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.7rem;
+      transition: 0.25s;
+      //   background-image: url(../../img/chevron-thin-right.svg);
+      //   background-size: cover;
+      //   background-repeat: no-repeat;
 
-    &__item {
-      flex: 0 0 50%;
-      margin-bottom: .7rem;
-      display: flex;
-      align-items: center;
+      // @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      //   background-color: var(--color-primary-red);
+      //   -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+      //   -webkit-mask-size: cover;
+      //   mask-image: url(../../img/chevron-thin-right.svg);
+      //   mask-size: cover;
+      //   background-image: none;
+      // }
 
-      &::before {
-          content: '';
-          display: inline-block;
-          width: 1rem;
-          height: 1rem;
-          margin-right: .7rem;
-          transition: .25s;
-        //   background-image: url(../../img/chevron-thin-right.svg);
-        //   background-size: cover;
-        //   background-repeat: no-repeat;
-
-        // @supports (-webkit-mask-image: url()) or (mask-image: url()) {
-        //   background-color: var(--color-primary-red);
-        //   -webkit-mask-image: url(../../img/chevron-thin-right.svg);
-        //   -webkit-mask-size: cover;
-        //   mask-image: url(../../img/chevron-thin-right.svg);
-        //   mask-size: cover;
-        //   background-image: none;
-        // }
-
-        background-color: var(--color-primary-red);
-          -webkit-mask-image: url(../../img/chevron-thin-right.svg);
-          -webkit-mask-size: cover;
-          mask-image: url(../../img/chevron-thin-right.svg);
-          mask-size: cover;
-          background-image: none;
-          
-      }
-
-      &:hover::before {
-        margin-right: .9rem;
-      }
+      background-color: var(--color-primary-red);
+      -webkit-mask-image: url(../../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../../img/chevron-thin-right.svg);
+      mask-size: cover;
+      background-image: none;
     }
+
+    &:hover::before {
+      margin-right: 0.9rem;
+    }
+  }
 }

@@ -3,7 +3,7 @@
   font-size: 1.4rem;
   margin-top: 3.5rem;
 
-  @include mq (medium) {
+  @include mq(medium) {
     display: flex;
     margin-top: 0;
   }
@@ -12,14 +12,14 @@
     list-style: none;
     position: relative;
 
-    @include mq (medium) {
+    @include mq(medium) {
       flex: 1;
     }
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
 
-      @include mq (medium) {
+      @include mq(medium) {
         margin-bottom: 0;
       }
     }
@@ -33,7 +33,8 @@
       height: 100%;
       background-color: var(--color-primary-red);
       transform: scaleY(0);
-      transition: transform 0.2s, width 0.4s 0.2s cubic-bezier(1, 0, 0, 1), background-color .1s;
+      transition: transform 0.2s, width 0.4s 0.2s cubic-bezier(1, 0, 0, 1),
+        background-color 0.1s;
     }
 
     &:hover::before {
@@ -42,7 +43,7 @@
     }
 
     &:active::before {
-        background-color: var(--color-primary-red-light);
+      background-color: var(--color-primary-red-light);
     }
 
     &--active::before {
@@ -65,14 +66,14 @@
       display: flex;
       align-items: center;
 
-      @include mq (medium) {
+      @include mq(medium) {
         justify-content: center;
         padding: 2rem;
       }
 
-      @include mq (small) {
+      @include mq(small) {
         flex-direction: column;
-        padding: 1.5rem .5rem;
+        padding: 1.5rem 0.5rem;
       }
     }
   }
@@ -83,11 +84,11 @@
     fill: currentColor;
     margin-right: 2rem;
 
-    @include mq (small) {
+    @include mq(small) {
       width: 1.5rem;
       height: 1.5rem;
       margin-right: 0;
-      margin-bottom: .7rem;
+      margin-bottom: 0.7rem;
     }
   }
 }

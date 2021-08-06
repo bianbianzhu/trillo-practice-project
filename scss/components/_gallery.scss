@@ -1,16 +1,16 @@
 .gallery {
-    display: flex;
+  display: flex;
 
-    // & > * {
-    //     width: 100%;
-    // }
+  // & > * {
+  //     width: 100%;
+  // }
 
-    &__item {
-    }
+  &__item {
+  }
 
-    &__photo {
-        width: 100%;
-        display: block;
-        //to avoid a small inline underneath
-    }
+  &__photo {
+    width: 100%;
+    display: block;
+    //to avoid a small inline underneath
+  }
 }

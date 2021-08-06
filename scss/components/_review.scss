@@ -10,13 +10,13 @@
   animation: fadeInFromBottom 2s 0.75s;
   animation-fill-mode: backwards;
 
-  @include mq (medium) {
+  @include mq(medium) {
     padding: 2rem;
     margin-bottom: 3rem;
   }
 
   &:last-of-type {
-    animation-delay: .85s;
+    animation-delay: 0.85s;
     animation-fill-mode: backwards;
   }
 
@@ -78,15 +78,15 @@
   &:hover &__user-box {
     transform: translateX(30%);
 
-    @include mq (large) {
+    @include mq(large) {
       transform: none;
     }
   }
 
   &:hover &__text {
     transform: translateX(5%);
-    
-    @include mq (small) {
+
+    @include mq(small) {
       transform: none;
     }
   }
